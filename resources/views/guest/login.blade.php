@@ -23,12 +23,14 @@
 
                     <label for="username"
                         class="pt-6 font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('login.username') }}</label>
-                    <input type="text" name="username" id="username" placeholder="{{ __('login.username-input') }}"
+                    <input required type="text" name="username" id="username"
+                        placeholder="{{ __('login.username-input') }}"
                         class="mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
 
                     <label for="password"
                         class="pt-6 font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('login.password') }}</label>
-                    <input type="password" name="password" id="password" placeholder="{{ __('login.password-input') }}"
+                    <input required type="password" name="password" id="password"
+                        placeholder="{{ __('login.password-input') }}"
                         class="mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
 
 
@@ -43,13 +45,11 @@
                                 class="ml-2 text-sm font-semibold text-black-150">{{ __('login.remember') }}</label>
                         </div>
 
-                        <a href="#"
+                        <a href="{{ route('reset') }}"
                             class="text-blue-750 text-sm leading-[17px] font-semibold">{{ __('login.forgot') }}</a>
                     </div>
 
-                    <button type="submit"
-                        class="bg-green-550 mt-6 py-[15px] px-[148px] rounded-lg  uppercase text-sm leading-[17px] font-bold text-white xs:text-base xs:leading-8.5">{{ __('login.login') }}</button>
-
+                    <x-form.button :text="__('login.login')" />
                 </form>
 
                 <div class="text-center mt-6 flex items-center justify-center">
