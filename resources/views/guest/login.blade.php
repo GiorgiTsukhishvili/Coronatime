@@ -6,7 +6,8 @@
 
             <div class="xs:pt-[40px] xs:pl-[108px] pt-6 pl-4">
 
-                <img src="{{ asset('svgs/logo.svg') }}" alt="logo" class="xs:w-[170px] xs:h-[42px] w-[137px] h-[33px]">
+
+                <x-svgs.logo />
 
                 <h1
                     class='font-black xs:text-2xl xs:leadin-[30px] text-xl leading-6 pt-10 
@@ -58,7 +59,7 @@
                 </div>
 
             </div>
-            <img src="{{ asset('svgs/covid-photo.png') }}" alt="Covid" class="xs:inline hidden">
+            <img src="{{ asset('imgs/covid-photo.png') }}" alt="Covid" class="xs:inline hidden">
         </div>
 
     </x-slot>
