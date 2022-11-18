@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('guest')->group(function () {
 	Route::view('/', 'guest.login')->name('login');
 	Route::view('/passowrd-reset', 'guest.password-reset')->name('reset');
+	Route::view('/register', 'guest.register')->name('register');
 });

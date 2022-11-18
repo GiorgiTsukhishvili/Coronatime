@@ -54,7 +54,7 @@
 
                 <div class="text-center mt-6 flex items-center justify-center">
                     <h1 class="xs:text-base xs:leading-8.5 text-sm leading-[17px] text-zinc-550 font-normal">
-                        {{ __('login.register') }} <a href="#"
+                        {{ __('login.register') }} <a href="{{ route('register') }}"
                             class="text-black-150 font-black">{{ __('login.register-link') }}</a></h1>
                 </div>
 
