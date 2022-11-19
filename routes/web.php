@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GuestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('guest')->group(function () {
-	Route::view('/', 'guest.login')->name('login');
-	Route::view('/passowrd-reset', 'guest.password-reset')->name('reset');
-	Route::view('/register', 'guest.register')->name('register');
+	Route::get('/', [GuestController::class, 'index'])->name('login');
+	Route::get('/passowrd-reset', [GuestController::class, 'reset'])->name('reset');
+	Route::get('/register', [GuestController::class, 'register'])->name('register');
 });
