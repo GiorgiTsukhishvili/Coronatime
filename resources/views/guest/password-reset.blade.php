@@ -1,6 +1,11 @@
 <x-layout>
     <x-slot name='content'>
 
+        <div class="absolute top-6 left-60 xs:left-[900px] xs:top-10">
+            <x-language :route="route('reset')" />
+
+        </div>
+
         <div class="w-full pt-6 pl-4 xs:flex xs:flex-col xs:justify-center xs:items-center">
 
             <x-svgs.logo />

@@ -1,6 +1,9 @@
 <x-layout>
     <x-slot name='content'>
+        <div class="absolute top-6 left-60 xs:left-96 xs:top-10">
+            <x-language :route="route('register')" />
 
+        </div>
 
         <div class="flex justify-between">
 
@@ -52,17 +55,17 @@
                             class="ml-2 text-sm font-semibold text-black-150">{{ __('login.remember') }}</label>
                     </div>
 
-
-
-
                     <x-form.button :text="__('reset.sign-up')" />
+
+                    <div class="text-center mt-6 flex items-center justify-center">
+                        <h1 class="xs:text-base xs:leading-8.5 text-sm leading-[17px] text-zinc-550 font-normal">
+                            {{ __('register.have-account') }} <a
+                                href="{{ route('login') }}?lang={{ app()->getLocale() }}"
+                                class="text-black-150 font-black">{{ __('login.login') }}</a></h1>
+                    </div>
                 </form>
 
-                <div class="text-center mt-6 flex items-center justify-center">
-                    <h1 class="xs:text-base xs:leading-8.5 text-sm leading-[17px] text-zinc-550 font-normal">
-                        {{ __('register.have-account') }} <a href="{{ route('login') }}"
-                            class="text-black-150 font-black">{{ __('login.login') }}</a></h1>
-                </div>
+
 
             </div>
             <img src="{{ asset('imgs/covid-photo.png') }}" alt="Covid" class="xs:inline hidden">
