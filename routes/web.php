@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GuestController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,7 @@ Route::middleware('guest')->group(function () {
 	Route::get('/passowrd-reset', [GuestController::class, 'reset'])->name('reset');
 	Route::get('/register', [GuestController::class, 'register'])->name('register');
 });
+
+Route::get('/worldwide', [UsersController::class, 'worldwide'])->name('worldwide');
+
+Route::get('/by-country', [UsersController::class, 'byCountry'])->name('by-country');
