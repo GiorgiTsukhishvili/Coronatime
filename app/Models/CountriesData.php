@@ -25,12 +25,12 @@ class CountriesData extends Model
 	{
 		if (!is_null($filters[0]) && app()->getLocale() === 'en')
 		{
-			$query->where('name->en', ucfirst($filters[0]));
+			$query->where('name->en', 'like', '%' . ucfirst($filters[0]) . '%')->first();
 		}
 
 		if (!is_null($filters[0]) && app()->getLocale() === 'ka')
 		{
-			$query->where('name->ka', ucfirst($filters[0]));
+			$query->where('name->ka', 'like', '%' . ucfirst($filters[0]) . '%')->first();
 		}
 	}
 }
