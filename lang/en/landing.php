@@ -10,4 +10,6 @@ return [
 	'recovered'       => 'Recovered',
 	'death'           => 'Death',
 	'country-search'  => 'Search by country',
+	'location'        => 'Location',
+	'no-country'      => 'No country found',
 ];

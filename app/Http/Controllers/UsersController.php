@@ -27,6 +27,11 @@ class UsersController extends Controller
 			app()->setLocale(request('lang'));
 		}
 
-		return view('users.country');
+		return view('users.country', [
+			'deaths'    => CountriesData::sum('deaths'),
+			'recovers'  => CountriesData::sum('recovered'),
+			'confirms'  => CountriesData::sum('confirmed'),
+			'countries' => CountriesData::latest()->filter([request('search')])->get(),
+		]);
 	}
 }

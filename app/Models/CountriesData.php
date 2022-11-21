@@ -20,4 +20,17 @@ class CountriesData extends Model
 		'deaths',
 		'recovered',
 	];
+
+	public function scopeFilter($query, array $filters)
+	{
+		if (!is_null($filters[0]) && app()->getLocale() === 'en')
+		{
+			$query->where('name->en', ucfirst($filters[0]));
+		}
+
+		if (!is_null($filters[0]) && app()->getLocale() === 'ka')
+		{
+			$query->where('name->ka', ucfirst($filters[0]));
+		}
+	}
 }
