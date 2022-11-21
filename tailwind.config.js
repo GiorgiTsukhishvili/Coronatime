@@ -13,6 +13,7 @@ module.exports = {
                 "neutral-250": "#E6E6E7",
                 "blue-750": "#2029F3",
                 "green-550": "#0FBA68",
+                "yellow-450": "#EAD621",
             },
             screens: {
                 xs: "380px",
@@ -20,6 +21,9 @@ module.exports = {
 
             lineHeight: {
                 8.5: "19px",
+            },
+            boxShadow: {
+                box: "1px 2px 8px rgba(0, 0, 0, 0.04)",
             },
         },
     },
