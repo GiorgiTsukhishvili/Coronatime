@@ -3,9 +3,6 @@
 
         <x-navbar :route="route('by-country')" />
 
-        @php
-            echo url()->full();
-        @endphp
 
         <div class="pl-4 pt-6 xs:px-[108px] xs:pt-10 ">
             <h1 class="font-black text-xl xs:text-2xl xs:leading-[30px] leading-6 text-black-150 mb-6 xs:mb-10">
