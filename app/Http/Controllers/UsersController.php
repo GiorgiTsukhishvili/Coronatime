@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CountriesData;
+
 class UsersController extends Controller
 {
 	public function worldwide()
@@ -11,7 +13,16 @@ class UsersController extends Controller
 			app()->setLocale(request('lang'));
 		}
 
-		return view('users.worldwide');
+		function count($which)
+		{
+			return	CountriesData::all()->reduce(fn ($carry, $item) => $carry + $item->$which, 0);
+		}
+
+		return view('users.worldwide', [
+			'deaths'   => count('deaths'),
+			'recovers' => count('recovered'),
+			'confirms' => count('confirmed'),
+		]);
 	}
 
 	public function byCountry()
