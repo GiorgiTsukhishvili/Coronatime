@@ -15,7 +15,7 @@ class UsersController extends Controller
 
 		function count($which)
 		{
-			return	CountriesData::all()->reduce(fn ($carry, $item) => $carry + $item->$which, 0);
+			return	CountriesData::sum($which);
 		}
 
 		return view('users.worldwide', [
