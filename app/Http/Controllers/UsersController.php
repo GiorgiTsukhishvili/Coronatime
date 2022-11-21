@@ -13,15 +13,10 @@ class UsersController extends Controller
 			app()->setLocale(request('lang'));
 		}
 
-		function count($which)
-		{
-			return	CountriesData::sum($which);
-		}
-
 		return view('users.worldwide', [
-			'deaths'   => count('deaths'),
-			'recovers' => count('recovered'),
-			'confirms' => count('confirmed'),
+			'deaths'   => CountriesData::sum('deaths'),
+			'recovers' => CountriesData::sum('recovered'),
+			'confirms' => CountriesData::sum('confirmed'),
 		]);
 	}
 
