@@ -31,7 +31,7 @@ class UsersController extends Controller
 			'deaths'    => CountriesData::sum('deaths'),
 			'recovers'  => CountriesData::sum('recovered'),
 			'confirms'  => CountriesData::sum('confirmed'),
-			'countries' => CountriesData::latest()->filter([request('search')])->get(),
+			'countries' => CountriesData::latest()->filter(request(['search']))->get(),
 		]);
 	}
 }

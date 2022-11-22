@@ -23,14 +23,11 @@ class CountriesData extends Model
 
 	public function scopeFilter($query, array $filters)
 	{
-		if (!is_null($filters[0]) && app()->getLocale() === 'en')
+		if ($filters['search'] ?? false)
 		{
-			$query->where('name->en', 'like', '%' . ucfirst($filters[0]) . '%')->first();
-		}
-
-		if (!is_null($filters[0]) && app()->getLocale() === 'ka')
-		{
-			$query->where('name->ka', 'like', '%' . ucfirst($filters[0]) . '%')->first();
+			$query->where('name->en', 'like', '%' . ucfirst($filters['search']) . '%')
+			->orWhere('name->ka', 'like', '%' . ucfirst($filters['search']) . '%')
+			->first();
 		}
 	}
 }
