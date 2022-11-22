@@ -34,12 +34,12 @@
         <div x-ref="panel" x-show="open" x-transition.origin.top.left x-on:click.outside="close($refs.button)"
             :id="$id('dropdown-button')" style="display: none;"
             class="absolute left-0 mt-2 w-32 rounded-md bg-white shadow-md">
-            <a href="{{ $route }}{{ str_contains($route, 'search') ? '&lang=en' : '?lang=en' }}"
+            <a href="{{ $route }}{{ (str_contains($route, 'search') ? '&lang=en' : str_contains($route, 'sort')) ? '&lang=en' : '?lang=en' }}"
                 class="font-normal text-base text-black-150 leading-8.5 flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left  hover:bg-gray-50 disabled:text-gray-500">
                 {{ __('language.english') }}
             </a>
 
-            <a href="{{ $route }}{{ str_contains($route, 'search') ? '&lang=ka' : '?lang=ka' }}"
+            <a href="{{ $route }}{{ (str_contains($route, 'search') ? '&lang=ka' : str_contains($route, 'sort')) ? '&lang=ka' : '?lang=ka' }}"
                 class="font-normal text-base text-black-150 leading-8.5 flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left  hover:bg-gray-50 disabled:text-gray-500">
                 {{ __('language.georgian') }}
             </a>

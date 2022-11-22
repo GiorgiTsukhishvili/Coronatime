@@ -34,4 +34,28 @@ class UsersController extends Controller
 			'countries' => CountriesData::latest()->filter(request(['search']))->get(),
 		]);
 	}
+
+	public function sort()
+	{
+		if (request('lang'))
+		{
+			app()->setLocale(request('lang'));
+		}
+
+		if (request('order') === 'up')
+		{
+			$countries = CountriesData::orderBy(request('sort'), 'asc')->get();
+		}
+		else
+		{
+			$countries = CountriesData::orderBy(request('sort'), 'desc')->get();
+		}
+
+		return view('users.country', [
+			'deaths'    => CountriesData::sum('deaths'),
+			'recovers'  => CountriesData::sum('recovered'),
+			'confirms'  => CountriesData::sum('confirmed'),
+			'countries' => $countries,
+		]);
+	}
 }
