@@ -1,7 +1,8 @@
 <x-layout>
     <x-slot name='content'>
 
-        <x-navbar :route="route('by-country')" />
+
+        <x-navbar :route="route('by-country') . (!is_null(request('search')) ? '?search=' . request('search') : '')" />
 
 
         <div class="pl-4 pt-6 xs:px-[108px] xs:pt-10 ">
@@ -24,7 +25,8 @@
                     <x-svgs.search-button />
                 </button>
 
-                <input type="text" name="search" placeholder="{{ __('landing.country-search') }}"
+                <input type="text" value="{{ request('search') }}" name="search"
+                    placeholder="{{ __('landing.country-search') }}"
                     class="outline-none text-zinc-550 text-sm leading-[17px] placeholder:text-sm placeholder:leading-[17px] xs:w-44">
 
                 <input type="text" name="lang" value="{{ app()->getLocale() }}" class="hidden">

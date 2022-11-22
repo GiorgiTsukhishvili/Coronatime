@@ -26,8 +26,7 @@ class CountriesData extends Model
 		if ($filters['search'] ?? false)
 		{
 			$query->where('name->en', 'like', '%' . ucfirst($filters['search']) . '%')
-			->orWhere('name->ka', 'like', '%' . ucfirst($filters['search']) . '%')
-			->first();
+			->orWhere('name->ka', 'like', '%' . ucfirst($filters['search']) . '%');
 		}
 	}
 }
