@@ -53,10 +53,14 @@ class UsersController extends Controller
 	public function logout()
 	{
 		auth()->logout();
+		if (request('lang'))
+		{
+			app()->setLocale(request('lang'));
+		}
 
 		request()->session()->invalidate();
 		request()->session()->regenerate();
 
-		return redirect(route('login'));
+		return redirect(route('login', ['lang' => app()->getLocale()]));
 	}
 }

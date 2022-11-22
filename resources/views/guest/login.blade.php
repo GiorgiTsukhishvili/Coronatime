@@ -23,7 +23,8 @@
                     {{ __('login.welcome-two') }}</h1>
 
 
-                <form method="POST" action="{{ route('login') }}" class="flex flex-col xs:max-w-[392px] max-w-[343px]">
+                <form method="POST" action="{{ route('login') }}?lang={{ app()->getLocale() }}"
+                    class="flex flex-col xs:max-w-[392px] max-w-[343px]">
                     @csrf
 
                     <div class="pt-6 relative">

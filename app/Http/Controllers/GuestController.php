@@ -20,13 +20,17 @@ class GuestController extends Controller
 	{
 		$data = $request->validated();
 
+		if (request('lang'))
+		{
+			app()->setLocale(request('lang'));
+		}
+
 		$login_type = filter_var($request->input('login'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 		$request->merge([$login_type => $request->input('login')]);
 
-		dd($data);
 		if (auth()->attempt($request->only($login_type, 'password')))
 		{
-			return redirect(route('worldwide'));
+			return redirect(route('worldwide', ['lang' => app()->getLocale()]));
 		}
 
 		return back()->withErrors(['login' => 'login.login-error'])->onlyInput('login');

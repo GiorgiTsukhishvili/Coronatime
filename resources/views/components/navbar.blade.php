@@ -50,7 +50,7 @@
                     class="absolute left-[-55px] mt-2 w-24 rounded-md bg-white shadow-md flex flex-col justify-center items-center">
                     <h1 class="text-black-150 py-2 font-bold leading-8.5 text-base">{{ auth()->user()->username }}</h1>
 
-                    <a href="{{ route('logout') }}"
+                    <a href="{{ route('logout') }}?lang={{ app()->getLocale() }}"
                         class="text-black-150 py-2 font-bold leading-8.5 text-base">{{ __('landing.log-out') }}</a>
 
 
@@ -62,7 +62,7 @@
 
             <h1 class="text-black-150 pr-4 font-bold leading-8.5 text-base">{{ auth()->user()->username }}</h1>
 
-            <a href="{{ route('logout') }}"
+            <a href="{{ route('logout') }}?lang={{ app()->getLocale() }}"
                 class="text-black-150 font-medium text-sm leading-[17px] pl-4 py-2 border-l border-neutral-250">{{ __('landing.log-out') }}</a>
 
         </div>
