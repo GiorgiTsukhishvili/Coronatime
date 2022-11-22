@@ -11,6 +11,7 @@ module.exports = {
                 "black-150": "#010414",
                 "zinc-550": "#808189",
                 "neutral-250": "#E6E6E7",
+                "neutral-150": "#F6F6F7",
                 "blue-750": "#2029F3",
                 "green-550": "#0FBA68",
                 "yellow-450": "#EAD621",
