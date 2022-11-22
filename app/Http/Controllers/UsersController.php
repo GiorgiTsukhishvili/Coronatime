@@ -42,20 +42,11 @@ class UsersController extends Controller
 			app()->setLocale(request('lang'));
 		}
 
-		if (request('order') === 'up')
-		{
-			$countries = CountriesData::orderBy(request('sort'), 'asc')->get();
-		}
-		else
-		{
-			$countries = CountriesData::orderBy(request('sort'), 'desc')->get();
-		}
-
 		return view('users.country', [
 			'deaths'    => CountriesData::sum('deaths'),
 			'recovers'  => CountriesData::sum('recovered'),
 			'confirms'  => CountriesData::sum('confirmed'),
-			'countries' => $countries,
+			'countries' => CountriesData::orderBy(request('sort'), request('order'))->get(),
 		]);
 	}
 }

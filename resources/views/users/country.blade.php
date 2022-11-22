@@ -36,43 +36,43 @@
         </div>
         <div class="mt-6 xs:mt-10 bg-neutral-150 py-5 pl-4 xs:mx-[108px] xs:rounded-t-lg">
             <div class="xs:pl-6 grid grid-cols-4 xs:grid-cols-6">
-                <a href="{{ route('sort') }}?sort=name&order={{ (request('sort') === 'name') & (request('order') === 'up') ? 'down' : 'up' }}&lang={{ app()->getLocale() }}"
+                <a href="{{ route('sort') }}?sort=name&order={{ (request('sort') === 'name') & (request('order') === 'asc') ? 'desc' : 'asc' }}&lang={{ app()->getLocale() }}"
                     class="flex items-center gap-2 text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
                     {{ __('landing.location') }}
 
                     <div class="flex flex-col gap-[1px]">
-                        <x-svgs.up-arrow :fill="(request('sort') === 'name') & (request('order') === 'down') ? 'true' : 'false'" />
-                        <x-svgs.down-arrow :fill="(request('sort') === 'name') & (request('order') === 'up') ? 'true' : 'false'" />
+                        <x-svgs.up-arrow :fill="(request('sort') === 'name') & (request('order') === 'desc') ? 'true' : 'false'" />
+                        <x-svgs.down-arrow :fill="(request('sort') === 'name') & (request('order') === 'asc') ? 'true' : 'false'" />
 
                     </div>
                 </a>
-                <a href="{{ route('sort') }}?sort=confirmed&order={{ (request('sort') === 'confirmed') & (request('order') === 'up') ? 'down' : 'up' }}&lang={{ app()->getLocale() }} "
+                <a href="{{ route('sort') }}?sort=confirmed&order={{ (request('sort') === 'confirmed') & (request('order') === 'asc') ? 'desc' : 'asc' }}&lang={{ app()->getLocale() }} "
                     class="flex items-center gap-2 text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
                     {{ __('landing.new-cases') }}
 
                     <div class="flex flex-col gap-[1px]">
-                        <x-svgs.up-arrow :fill="(request('sort') === 'confirmed') & (request('order') === 'down') ? 'true' : 'false'" />
-                        <x-svgs.down-arrow :fill="(request('sort') === 'confirmed') & (request('order') === 'up') ? 'true' : 'false'" />
+                        <x-svgs.up-arrow :fill="(request('sort') === 'confirmed') & (request('order') === 'desc') ? 'true' : 'false'" />
+                        <x-svgs.down-arrow :fill="(request('sort') === 'confirmed') & (request('order') === 'asc') ? 'true' : 'false'" />
 
                     </div>
                 </a>
-                <a href="{{ route('sort') }}?sort=deaths&order={{ (request('sort') === 'deaths') & (request('order') === 'up') ? 'down' : 'up' }}&lang={{ app()->getLocale() }} "
+                <a href="{{ route('sort') }}?sort=deaths&order={{ (request('sort') === 'deaths') & (request('order') === 'asc') ? 'desc' : 'asc' }}&lang={{ app()->getLocale() }} "
                     class="flex items-center gap-2 text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
                     {{ __('landing.death') }}
 
                     <div class="flex flex-col gap-[1px]">
-                        <x-svgs.up-arrow :fill="(request('sort') === 'deaths') & (request('order') === 'down') ? 'true' : 'false'" />
-                        <x-svgs.down-arrow :fill="(request('sort') === 'deaths') & (request('order') === 'up') ? 'true' : 'false'" />
+                        <x-svgs.up-arrow :fill="(request('sort') === 'deaths') & (request('order') === 'desc') ? 'true' : 'false'" />
+                        <x-svgs.down-arrow :fill="(request('sort') === 'deaths') & (request('order') === 'asc') ? 'true' : 'false'" />
 
                     </div>
                 </a>
-                <a href="{{ route('sort') }}?sort=recovered&order={{ (request('sort') === 'recovered') & (request('order') === 'up') ? 'down' : 'up' }}&lang={{ app()->getLocale() }} "
+                <a href="{{ route('sort') }}?sort=recovered&order={{ (request('sort') === 'recovered') & (request('order') === 'asc') ? 'desc' : 'asc' }}&lang={{ app()->getLocale() }} "
                     class="flex items-center gap-2 text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
                     {{ __('landing.recovered') }}
 
                     <div class="flex flex-col gap-[1px]">
-                        <x-svgs.up-arrow :fill="(request('sort') === 'recovered') & (request('order') === 'down') ? 'true' : 'false'" />
-                        <x-svgs.down-arrow :fill="(request('sort') === 'recovered') & (request('order') === 'up') ? 'true' : 'false'" />
+                        <x-svgs.up-arrow :fill="(request('sort') === 'recovered') & (request('order') === 'desc') ? 'true' : 'false'" />
+                        <x-svgs.down-arrow :fill="(request('sort') === 'recovered') & (request('order') === 'asc') ? 'true' : 'false'" />
 
                     </div>
                 </a>
