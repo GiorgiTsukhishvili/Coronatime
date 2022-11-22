@@ -12,4 +12,5 @@ return [
 	'login'          => 'Log in',
 	'register'       => 'Don’t have and account?',
 	'register-link'  => 'Sign up for free',
+	'login-error'    => 'Username or password is incorrect',
 ];

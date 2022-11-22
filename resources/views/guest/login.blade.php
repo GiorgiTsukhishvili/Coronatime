@@ -23,29 +23,46 @@
                     {{ __('login.welcome-two') }}</h1>
 
 
-                <form method="POST" action="#" class="flex flex-col xs:max-w-[392px] max-w-[343px]">
+                <form method="POST" action="{{ route('login') }}" class="flex flex-col xs:max-w-[392px] max-w-[343px]">
                     @csrf
 
-                    <label for="username"
-                        class="pt-6 font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('login.username') }}</label>
-                    <input required type="text" name="username" id="username"
-                        placeholder="{{ __('login.username-input') }}"
-                        class="mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
+                    <div class="pt-6 relative">
+                        <label for="login"
+                            class=" font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('login.username') }}</label>
+                        <input required type="text" name="login" id="login" minlength="3"
+                            placeholder="{{ __('login.username-input') }}" value="{{ old('login') }}"
+                            class="focus:shadow-focus-box focus:border focus:outline-none focus:border-blue-750       mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
 
-                    <label for="password"
-                        class="pt-6 font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('login.password') }}</label>
-                    <input required type="password" name="password" id="password"
-                        placeholder="{{ __('login.password-input') }}"
-                        class="mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
+                        <div class="absolute right-4 bottom-5 hidden">
+                            <x-svgs.green-circle />
+                        </div>
+                    </div>
+
+                    @error('login')
+                        <p class="flex items-center mt-2.5 gap-2 text-sm font-normal leading-[17px] text-error">
+                            <x-svgs.error-circle /> {{ __('login.login-error') }}
+                        </p>
+                    @enderror
 
 
+
+                    <div class="pt-6 relative">
+                        <label for="password"
+                            class=" font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('login.password') }}</label>
+                        <input required type="password" name="password" id="password" minlength="3"
+                            placeholder="{{ __('login.password-input') }}"
+                            class=" focus:shadow-focus-box focus:border focus:outline-none focus:border-blue-750 mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
+                        <div class="absolute right-4 bottom-5 hidden">
+                            <x-svgs.green-circle />
+                        </div>
+                    </div>
                     <div class="flex justify-between mt-6">
 
 
 
                         <div class="flex items-center">
-                            <input id="remember" type="checkbox" value=""
-                                class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-neutral-250 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <input id="remember" name="remember" type="checkbox"
+                                class="w-4 h-4 text-green-650 bg-gray-100 rounded border-gray-300 focus:ring-green-500 dark:focus:ring-green-650 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-650">
                             <label for="remember"
                                 class="ml-2 text-sm font-semibold text-black-150">{{ __('login.remember') }}</label>
                         </div>

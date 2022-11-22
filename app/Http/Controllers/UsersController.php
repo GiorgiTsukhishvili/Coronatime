@@ -49,4 +49,14 @@ class UsersController extends Controller
 			'countries' => CountriesData::orderBy(request('sort'), request('order'))->get(),
 		]);
 	}
+
+	public function logout()
+	{
+		auth()->logout();
+
+		request()->session()->invalidate();
+		request()->session()->regenerate();
+
+		return redirect(route('login'));
+	}
 }
