@@ -2,7 +2,9 @@
     <x-slot name='content'>
 
 
-        <x-navbar :route="route('by-country') . (!is_null(request('search')) ? '?search=' . request('search') : '')" />
+        <x-navbar :route="(is_null(request('sort')) ? route('by-country') : route('sort')) .
+            (!is_null(request('search')) ? '?search=' . request('search') : '') .
+            (!is_null(request('sort')) ? '?sort=' . request('sort') . '&order=' . request('order') : '')" />
 
 
         <div class="pl-4 pt-6 xs:px-[108px] xs:pt-10 ">
@@ -34,18 +36,46 @@
         </div>
         <div class="mt-6 xs:mt-10 bg-neutral-150 py-5 pl-4 xs:mx-[108px] xs:rounded-t-lg">
             <div class="xs:pl-6 grid grid-cols-4 xs:grid-cols-6">
-                <h1 class=" text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
+                <a href="{{ route('sort') }}?sort=name&order={{ (request('sort') === 'name') & (request('order') === 'asc') ? 'desc' : 'asc' }}&lang={{ app()->getLocale() }}"
+                    class="flex items-center gap-2 text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
                     {{ __('landing.location') }}
-                </h1>
-                <h1 class=" text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
+
+                    <div class="flex flex-col gap-[1px]">
+                        <x-svgs.up-arrow :fill="(request('sort') === 'name') & (request('order') === 'desc') ? 'true' : 'false'" />
+                        <x-svgs.down-arrow :fill="(request('sort') === 'name') & (request('order') === 'asc') ? 'true' : 'false'" />
+
+                    </div>
+                </a>
+                <a href="{{ route('sort') }}?sort=confirmed&order={{ (request('sort') === 'confirmed') & (request('order') === 'asc') ? 'desc' : 'asc' }}&lang={{ app()->getLocale() }} "
+                    class="flex items-center gap-2 text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
                     {{ __('landing.new-cases') }}
-                </h1>
-                <h1 class=" text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
+
+                    <div class="flex flex-col gap-[1px]">
+                        <x-svgs.up-arrow :fill="(request('sort') === 'confirmed') & (request('order') === 'desc') ? 'true' : 'false'" />
+                        <x-svgs.down-arrow :fill="(request('sort') === 'confirmed') & (request('order') === 'asc') ? 'true' : 'false'" />
+
+                    </div>
+                </a>
+                <a href="{{ route('sort') }}?sort=deaths&order={{ (request('sort') === 'deaths') & (request('order') === 'asc') ? 'desc' : 'asc' }}&lang={{ app()->getLocale() }} "
+                    class="flex items-center gap-2 text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
                     {{ __('landing.death') }}
-                </h1>
-                <h1 class=" text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
+
+                    <div class="flex flex-col gap-[1px]">
+                        <x-svgs.up-arrow :fill="(request('sort') === 'deaths') & (request('order') === 'desc') ? 'true' : 'false'" />
+                        <x-svgs.down-arrow :fill="(request('sort') === 'deaths') & (request('order') === 'asc') ? 'true' : 'false'" />
+
+                    </div>
+                </a>
+                <a href="{{ route('sort') }}?sort=recovered&order={{ (request('sort') === 'recovered') & (request('order') === 'asc') ? 'desc' : 'asc' }}&lang={{ app()->getLocale() }} "
+                    class="flex items-center gap-2 text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
                     {{ __('landing.recovered') }}
-                </h1>
+
+                    <div class="flex flex-col gap-[1px]">
+                        <x-svgs.up-arrow :fill="(request('sort') === 'recovered') & (request('order') === 'desc') ? 'true' : 'false'" />
+                        <x-svgs.down-arrow :fill="(request('sort') === 'recovered') & (request('order') === 'asc') ? 'true' : 'false'" />
+
+                    </div>
+                </a>
             </div>
         </div>
         @if (count($countries) > 0)
