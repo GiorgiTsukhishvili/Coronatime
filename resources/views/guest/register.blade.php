@@ -24,33 +24,56 @@
                 <form method="POST" action="#" class="flex flex-col xs:max-w-[392px] max-w-[343px]">
                     @csrf
 
-                    <label for="username"
-                        class="pt-6 font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('login.username') }}</label>
-                    <input required type="text" name="username" id="username"
-                        placeholder="{{ __('register.username-input') }}"
-                        class="mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
+                    <div class="pt-6 relative">
+                        <label for="username"
+                            class=" font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('login.username') }}</label>
+                        <input required type="text" name="username" id="username"
+                            placeholder="{{ __('register.username-input') }}"
+                            class="focus:shadow-focus-box focus:border focus:outline-none focus:border-blue-750 mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
 
-                    <label for="email"
-                        class="pt-6 font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('register.email') }}</label>
-                    <input required type="text" name="email" id="email"
-                        placeholder="{{ __('register.email-input') }}"
-                        class="mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
+                        <div class="absolute right-4 bottom-5 hidden">
+                            <x-svgs.green-circle />
+                        </div>
+                    </div>
 
-                    <label for="password"
-                        class="pt-6 font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('login.password') }}</label>
-                    <input required type="password" name="password" id="password"
-                        placeholder="{{ __('login.password-input') }}"
-                        class="mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
+                    <div class="pt-6 relative">
+                        <label for="email"
+                            class="font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('register.email') }}</label>
+                        <input required type="text" name="email" id="email"
+                            placeholder="{{ __('register.email-input') }}"
+                            class="focus:shadow-focus-box focus:border focus:outline-none focus:border-blue-750 mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
+                        <div class="absolute right-4 bottom-5 hidden">
+                            <x-svgs.green-circle />
+                        </div>
+                    </div>
 
-                    <label for="password_confirmation"
-                        class="pt-6 font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('register.password_confirmation') }}</label>
-                    <input required type="password" name="password_confirmation" id="password_confirmation"
-                        placeholder="{{ __('register.password_confirmation') }}"
-                        class="mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
+                    <div class="pt-6 relative">
+                        <label for="password"
+                            class="font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('login.password') }}</label>
+                        <input required type="password" name="password" id="password"
+                            placeholder="{{ __('login.password-input') }}"
+                            class="focus:shadow-focus-box focus:border focus:outline-none focus:border-blue-750 mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
+
+                        <div class="absolute right-4 bottom-5 hidden">
+                            <x-svgs.green-circle />
+                        </div>
+                    </div>
+
+                    <div class="pt-6 relative">
+                        <label for="password_confirmation"
+                            class="font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('register.password_confirmation') }}</label>
+                        <input required type="password" name="password_confirmation" id="password_confirmation"
+                            placeholder="{{ __('register.password_confirmation') }}"
+                            class="focus:shadow-focus-box focus:border focus:outline-none focus:border-blue-750 mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
+
+                        <div class="absolute right-4 bottom-5 hidden">
+                            <x-svgs.green-circle />
+                        </div>
+                    </div>
 
                     <div class="flex items-center mt-6">
-                        <input id="remember" type="checkbox" value=""
-                            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-neutral-250 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <input id="remember" name="remember" type="checkbox" value="1"
+                            class="w-4 h-4 text-green-650 bg-gray-100 rounded border-neutral-250 focus:ring-green-500 dark:focus:ring-green-650 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-650">
                         <label for="remember"
                             class="ml-2 text-sm font-semibold text-black-150">{{ __('login.remember') }}</label>
                     </div>

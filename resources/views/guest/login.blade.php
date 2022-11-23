@@ -62,8 +62,8 @@
 
 
                         <div class="flex items-center">
-                            <input id="remember" name="remember" type="checkbox"
-                                class="w-4 h-4 text-green-650 bg-gray-100 rounded border-gray-300 focus:ring-green-500 dark:focus:ring-green-650 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-650">
+                            <input id="remember" name="remember" type="checkbox" value="1"
+                                class="w-4 h-4 text-green-650 bg-gray-100 rounded border-neutral-250 focus:ring-green-500 dark:focus:ring-green-650 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-650">
                             <label for="remember"
                                 class="ml-2 text-sm font-semibold text-black-150">{{ __('login.remember') }}</label>
                         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CountriesData;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -52,7 +53,7 @@ class UsersController extends Controller
 
 	public function logout()
 	{
-		auth()->logout();
+		Auth::logout();
 		if (request('lang'))
 		{
 			app()->setLocale(request('lang'));

@@ -28,7 +28,9 @@ class GuestController extends Controller
 		$login_type = filter_var($request->input('login'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 		$request->merge([$login_type => $request->input('login')]);
 
-		if (auth()->attempt($request->only($login_type, 'password')))
+		$remember = request()->has('remember') ? true : false;
+
+		if (auth()->attempt($request->only($login_type, 'password'), $remember))
 		{
 			return redirect(route('worldwide', ['lang' => app()->getLocale()]));
 		}
