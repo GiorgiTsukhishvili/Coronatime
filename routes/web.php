@@ -17,12 +17,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
 	Route::get('/', [GuestController::class, 'index'])->name('login');
+	Route::post('/', [GuestController::class, 'login'])->name('login');
 	Route::get('/password-reset', [GuestController::class, 'reset'])->name('reset');
 	Route::get('/register', [GuestController::class, 'register'])->name('register');
 });
 
-Route::get('/worldwide', [UsersController::class, 'worldwide'])->name('worldwide');
+Route::middleware('auth')->group(function () {
+	Route::get('/worldwide', [UsersController::class, 'worldwide'])->name('worldwide');
 
-Route::get('/by-country', [UsersController::class, 'byCountry'])->name('by-country');
+	Route::get('/by-country', [UsersController::class, 'byCountry'])->name('by-country');
 
-Route::get('/country/sort', [UsersController::class, 'sort'])->name('sort');
+	Route::get('/country/sort', [UsersController::class, 'sort'])->name('sort');
+
+	Route::get('/logout', [UsersController::class, 'logout'])->name('logout');
+});

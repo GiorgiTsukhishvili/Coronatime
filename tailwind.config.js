@@ -14,7 +14,9 @@ module.exports = {
                 "neutral-150": "#F6F6F7",
                 "blue-750": "#2029F3",
                 "green-550": "#0FBA68",
+                "green-650": "#249E2C",
                 "yellow-450": "#EAD621",
+                error: "#CC1E1E",
             },
             screens: {
                 xs: "380px",
@@ -25,8 +27,10 @@ module.exports = {
             },
             boxShadow: {
                 box: "1px 2px 8px rgba(0, 0, 0, 0.04)",
+                "focus-box":
+                    "-3px 3px 0px #DBE8FB, -3px -3px 0px #DBE8FB, 3px -3px 0px #DBE8FB, 3px 3px 0px #DBE8FB, 3px 3px 0px #DBE8FB",
             },
         },
     },
-    plugins: [],
+    plugins: [require("@tailwindcss/forms")],
 };
