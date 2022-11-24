@@ -13,4 +13,5 @@ return [
 	'register'       => 'Don’t have and account?',
 	'register-link'  => 'Sign up for free',
 	'login-error'    => 'Username or password is incorrect',
+	'email-sent'     => 'We have sent you a confirmation email',
 ];

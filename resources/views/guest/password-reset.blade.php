@@ -25,7 +25,7 @@
                         class=" pt-6 block font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('reset.email') }}</label>
                     <input required type="email" name="email" id="email"
                         placeholder="{{ __('reset.email-input') }}"
-                        class="focus:shadow-focus-box focus:border focus:outline-none focus:border-blue-750 mb-[337px] xs:mb-14  mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
+                        class="focus:shadow-focus-box {{ $errors->has('email') ? 'border-error' : 'border-neutral-250' }} focus:border focus:outline-none focus:border-blue-750 mb-[337px] xs:mb-14  mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
                     <div class="absolute right-8 xs:right-4 top-[92px] hidden">
                         <x-svgs.green-circle />
                     </div>

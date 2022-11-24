@@ -7,9 +7,14 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
 	public function up()
 	{
+		Schema::create('users_verify', function (Blueprint $table) {
+			$table->integer('user_id');
+			$table->string('token');
+			$table->timestamps();
+		});
+
 		Schema::table('users', function (Blueprint $table) {
 			$table->string('username')->after('id');
-			$table->boolean('is_email_verified')->default(0)->after('email');
 		});
 	}
 
