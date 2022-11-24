@@ -7,7 +7,6 @@ use App\Http\Requests\PostRegisterRequest;
 use App\Models\User;
 use App\Models\UserVerify;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Str;
 
 class GuestController extends Controller
 {
@@ -72,7 +71,7 @@ class GuestController extends Controller
 
 		$createUser = User::create($data);
 
-		$token = Str::random(64);
+		$token = sha1($data['email']);
 
 		UserVerify::create([
 			'user_id' => $createUser->id,
