@@ -8,4 +8,8 @@ return [
 	'username-input'        => 'Enter unique username',
 	'email'                 => 'Email',
 	'email-input'           => 'Enter your email',
+	'confirmation'          => 'Passwords do not match',
+	'password'              => 'Password is required and must match confirmation',
+	'username'              => 'Username must be unique and must contain at least 3 characters',
+	'email-input'           => 'Email must be unique',
 ];

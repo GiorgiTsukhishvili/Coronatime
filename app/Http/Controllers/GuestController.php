@@ -39,7 +39,7 @@ class GuestController extends Controller
 			if (auth()->user()->email_verified_at === null)
 			{
 				auth()->logout();
-				return redirect(route('email-sent', ['lang' => app()->getLocale()]));
+				return view('confirmation.email-sent');
 			}
 
 			return redirect(route('worldwide', ['lang' => app()->getLocale()]));
@@ -83,7 +83,7 @@ class GuestController extends Controller
 			$message->subject('Email Verification Mail');
 		});
 
-		return redirect(route('email-sent', ['lang' => app()->getLocale()]));
+		return view('confirmation.email-sent');
 	}
 
 	public function reset()
@@ -94,15 +94,5 @@ class GuestController extends Controller
 		}
 
 		return view('guest.password-reset');
-	}
-
-	public function confirmationSent()
-	{
-		if (request('lang'))
-		{
-			app()->setLocale(request('lang'));
-		}
-
-		return view('confirmation.email-sent');
 	}
 }
