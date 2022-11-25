@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,7 @@ Route::middleware('guest')->group(function () {
 	Route::post('/', [GuestController::class, 'login'])->name('login');
 	Route::get('/password-reset', [GuestController::class, 'reset'])->name('reset');
 	Route::get('/register', [GuestController::class, 'register'])->name('register');
-	Route::post('/register', [GuestController::class, 'postRegister'])->name('post-register');
+	Route::post('/register', [EmailController::class, 'postRegister'])->name('post-register');
 });
 
 Route::middleware('auth')->group(function () {
