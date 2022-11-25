@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PasswordResetRequest;
 use App\Http\Requests\PostRegisterRequest;
 use App\Models\User;
 use App\Models\UserVerify;
@@ -66,5 +67,31 @@ class EmailController extends Controller
 		DB::table('users_verify')->where(['token' => request('token')])->delete();
 
 		return view('confirmation.email-verified');
+	}
+
+	public function postPasswordChange(PasswordResetRequest $request)
+	{
+		$data = $request->validated();
+
+		if (request('lang'))
+		{
+			app()->setLocale(request('lang'));
+		}
+
+		$token = sha1($data['email']);
+
+		$user = User::where('email', $data['email'])->first();
+
+		UserVerify::create([
+			'user_id' => $user->id,
+			'token'   => $token,
+		]);
+
+		Mail::send('confirmation.reset-email', ['token' => $token], function ($message) use ($request) {
+			$message->to($request->email);
+			$message->subject('Password Reset Mail');
+		});
+
+		return view('confirmation.email-sent');
 	}
 }
