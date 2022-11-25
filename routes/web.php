@@ -21,7 +21,6 @@ Route::middleware('guest')->group(function () {
 	Route::get('/password-reset', [GuestController::class, 'reset'])->name('reset');
 	Route::get('/register', [GuestController::class, 'register'])->name('register');
 	Route::post('/register', [GuestController::class, 'postRegister'])->name('post-register');
-	Route::get('/email-sent', [GuestController::class, 'confirmationSent'])->name('email-sent');
 });
 
 Route::middleware('auth')->group(function () {
