@@ -48,7 +48,9 @@
                 <div x-ref="panel" x-show="open" x-transition.origin.top.left x-on:click.outside="close($refs.button)"
                     :id="$id('dropdown-button')" style="display: none;"
                     class="absolute left-[-55px] mt-2 w-24 rounded-md bg-white shadow-md flex flex-col justify-center items-center">
-                    <h1 class="text-black-150 py-2 font-bold leading-8.5 text-base">{{ auth()->user()->username }}</h1>
+                    <h1
+                        class="text-black-150 overflow-hidden overflow-ellipsis w-[96px] py-2 px-2 font-bold leading-8.5 text-base">
+                        {{ auth()->user()->username }}</h1>
 
                     <a href="{{ route('logout') }}?lang={{ app()->getLocale() }}"
                         class="text-black-150 py-2 font-bold leading-8.5 text-base">{{ __('landing.log-out') }}</a>
