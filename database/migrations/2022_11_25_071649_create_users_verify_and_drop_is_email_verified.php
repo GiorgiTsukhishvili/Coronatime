@@ -14,13 +14,12 @@ return new class extends Migration {
 		});
 
 		Schema::table('users', function (Blueprint $table) {
-			$table->string('username')->after('id');
+			$table->dropColumn('is_email_verified');
 		});
 	}
 
 	public function down()
 	{
-		Schema::table('users', function (Blueprint $table) {
-		});
+		Schema::dropIfExists('users_verify_and_drop_is_email_verified');
 	}
 };
