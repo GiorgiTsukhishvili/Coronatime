@@ -29,7 +29,7 @@
                         <label for="username"
                             class=" font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('login.username') }}</label>
                         <input required type="text" name="username" id="username"
-                            placeholder="{{ __('register.username-input') }}"
+                            placeholder="{{ __('register.username-input') }}" value="{{ old('username') }}"
                             class="focus:shadow-focus-box focus:border focus:outline-none focus:border-blue-750 mt-2 border {{ $errors->has('username') ? 'border-error' : 'border-neutral-250' }} rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
 
                         <div class="absolute right-4 bottom-5 hidden">
@@ -47,7 +47,7 @@
                         <label for="email"
                             class="font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('register.email') }}</label>
                         <input required type="text" name="email" id="email"
-                            placeholder="{{ __('register.email-input') }}"
+                            placeholder="{{ __('register.email-input') }}" value="{{ old('email') }}"
                             class="focus:shadow-focus-box focus:border focus:outline-none focus:border-blue-750 mt-2 border {{ $errors->has('email') ? 'border-error' : 'border-neutral-250' }} rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
                         <div class="absolute right-4 bottom-5 hidden">
                             <x-svgs.green-circle />

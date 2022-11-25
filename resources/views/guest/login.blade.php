@@ -39,11 +39,11 @@
                         </div>
                     </div>
 
-                    @error('login')
+                    @if ($errors->any())
                         <p class="flex items-center mt-2.5 gap-2 text-sm font-normal leading-[17px] text-error">
                             <x-svgs.error-circle /> {{ __('login.login-error') }}
                         </p>
-                    @enderror
+                    @endif
 
 
 
