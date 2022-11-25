@@ -16,6 +16,7 @@ const inputs = [login, password, username];
 const validateInput = (e) => {
     if (e.target.value.length > 3) {
         e.target.classList.remove("border-neutral-250");
+        e.target.classList.remove("border-error");
         e.target.classList.add("border-green-650");
         e.target.nextSibling.nextSibling.classList.remove("hidden");
     } else {
@@ -38,6 +39,7 @@ if (email !== null) {
         ) {
             e.target.classList.remove("border-neutral-250");
             e.target.classList.add("border-green-650");
+            e.target.classList.remove("border-error");
             e.target.nextSibling.nextSibling.classList.remove("hidden");
         } else {
             e.target.classList.add("border-neutral-250");
@@ -52,6 +54,7 @@ if (passwordConfirmation !== null) {
         if (e.target.value === password.value) {
             e.target.classList.remove("border-neutral-250");
             e.target.classList.add("border-green-650");
+            e.target.classList.remove("border-error");
             e.target.nextSibling.nextSibling.classList.remove("hidden");
         } else {
             e.target.classList.add("border-neutral-250");
