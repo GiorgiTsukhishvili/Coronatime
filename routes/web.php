@@ -23,6 +23,7 @@ Route::middleware('guest')->group(function () {
 	Route::get('/register', [GuestController::class, 'register'])->name('register');
 	Route::post('/register', [EmailController::class, 'postRegister'])->name('post-register');
 	Route::get('/verify-account', [EmailController::class, 'verifyAccount'])->name('verify-account');
+	Route::post('/password-reset', [EmailController::class, 'postPasswordChange'])->name('post-password-reset');
 });
 
 Route::middleware('auth')->group(function () {
