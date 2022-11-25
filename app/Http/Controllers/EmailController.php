@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewPasswordRequest;
 use App\Http\Requests\PasswordResetRequest;
 use App\Http\Requests\PostRegisterRequest;
 use App\Models\User;
@@ -93,5 +94,45 @@ class EmailController extends Controller
 		});
 
 		return view('confirmation.email-sent');
+	}
+
+	public function newPassword()
+	{
+		if (request('lang'))
+		{
+			app()->setLocale(request('lang'));
+		}
+
+		return view('confirmation.password-reset', ['token' => request('token')]);
+	}
+
+	public function postNewPassword(NewPasswordRequest $request)
+	{
+		if (request('lang'))
+		{
+			app()->setLocale(request('lang'));
+		}
+
+		if (is_null(request('token')))
+		{
+			abort(403);
+		}
+
+		$data = $request->validated();
+
+		$verifyUser = UserVerify::where('token', request('token'))->first();
+
+		if (!is_null($verifyUser))
+		{
+			$user = $verifyUser->user;
+
+			$user->password = bcrypt($data['password']);
+
+			$user->save();
+		}
+
+		DB::table('users_verify')->where(['token' => request('token')])->delete();
+
+		return view('confirmation.password-changed');
 	}
 }
