@@ -83,7 +83,7 @@
 
     <h1 class="button-click">{{ __('reset.click-button') }}</h1>
 
-    <a href="{{ route('', ['token' => $token, 'lang' => app()->getLocale()]) }}"
+    <a href="{{ route('new-password', ['token' => $token, 'lang' => app()->getLocale()]) }}"
         class="email-button">{{ __('reset.reset') }}</a>
 
 </body>
