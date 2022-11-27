@@ -18,18 +18,15 @@ class RequestData extends Command
 
 		foreach ($everyCountry as $country)
 		{
-			$data['name'] = $country['name'];
-
 			$eachCountry = Http::post('https://devtest.ge/get-country-statistics', ['code' => $country['code']])->json();
 
-			$newCountry = new CountriesData();
-
-			$newCountry->setTranslation('name', 'en', $country['name']['en'])
-			->setTranslation('name', 'ka', $country['name']['ka'])
-			->setAttribute('confirmed', $eachCountry['confirmed'])
-			->setAttribute('recovered', $eachCountry['recovered'])
-			->setAttribute('deaths', $eachCountry['deaths'])
-			->save();
+			CountriesData::updateOrCreate(
+				['name->en' => $country['name']['en']],
+				['name'         => $country['name'],
+					'confirmed'    => $eachCountry['confirmed'],
+					'recovered'    => $eachCountry['recovered'],
+					'deaths'       => $eachCountry['deaths'], ]
+			);
 		}
 
 		return Command::SUCCESS;
