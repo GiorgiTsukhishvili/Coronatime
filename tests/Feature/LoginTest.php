@@ -12,7 +12,7 @@ class LoginTest extends TestCase
 
 	public function test_application_returns_login_page()
 	{
-		$response = $this->get('/?lang=en');
+		$response = $this->get(route('login', ['lang' => app()->getLocale()]));
 
 		$response->assertSuccessful();
 
@@ -21,42 +21,42 @@ class LoginTest extends TestCase
 
 	public function test_login_returns_error_if_inputs_not_provided()
 	{
-		$response = $this->post('/?lang=en');
+		$response = $this->post(route('login', ['lang' => app()->getLocale()]));
 
 		$response->assertSessionHasErrors(['login', 'password']);
 	}
 
 	public function test_login_returns_error_if_login_not_provided()
 	{
-		$response = $this->post('/?lang=en');
+		$response = $this->post(route('login', ['lang' => app()->getLocale()]));
 
 		$response->assertSessionHasErrors(['login']);
 	}
 
 	public function test_login_returns_error_if_password_not_provided()
 	{
-		$response = $this->post('/?lang=en');
+		$response = $this->post(route('login', ['lang' => app()->getLocale()]));
 
 		$response->assertSessionHasErrors(['password']);
 	}
 
 	public function test_login_returns_error_if_password_is_less_then_three_symbol()
 	{
-		$response = $this->post('/?lang=en', ['password' => 'ps']);
+		$response = $this->post(route('login', ['lang' => app()->getLocale()]), ['password' => 'ps']);
 
 		$response->assertSessionHasErrors(['password']);
 	}
 
 	public function test_login_returns_error_if_login_is_less_then_three_symbol()
 	{
-		$response = $this->post('/?lang=en', ['login' => 'sd']);
+		$response = $this->post(route('login', ['lang' => app()->getLocale()]), ['login' => 'sd']);
 
 		$response->assertSessionHasErrors(['login']);
 	}
 
 	public function test_login_returns_error_if_user_does_not_exists()
 	{
-		$response = $this->post('/?lang=en', ['login' => 'user@redberry.ge', 'password' => 'password']);
+		$response = $this->post(route('login', ['lang' => app()->getLocale()]), ['login' => 'user@redberry.ge', 'password' => 'password']);
 
 		$response->assertSessionHasErrors(['login' => 'login.login-error']);
 	}
@@ -73,7 +73,7 @@ class LoginTest extends TestCase
 				'email_verified_at' => null, ]
 		);
 
-		$response = $this->post('/?lang=en', ['login' => $email, 'password' => 'password']);
+		$response = $this->post(route('login', ['lang' => app()->getLocale()]), ['login' => $email, 'password' => 'password']);
 
 		$response->assertViewIs('confirmation.email-sent');
 	}
@@ -90,7 +90,7 @@ class LoginTest extends TestCase
 			]
 		);
 
-		$response = $this->post('/?lang=en', ['login' => $email, 'password' => 'password']);
+		$response = $this->post(route('login', ['lang' => app()->getLocale()]), ['login' => $email, 'password' => 'password']);
 
 		$response->assertRedirect(route('worldwide', ['lang' => app()->getLocale()]));
 	}
