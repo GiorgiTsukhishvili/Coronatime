@@ -35,6 +35,13 @@ class UserTest extends TestCase
 			$response->assertSuccessful();
 		}
 
+		public function test_user_can_search_countries()
+		{
+			$response = $this->actingAs($this->user)->get(route('by-country', ['lang' => app()->getLocale(), 'search' =>  'georgia']));
+
+			$response->assertSuccessful();
+		}
+
 		public function test_user_can_logout()
 		{
 			$response = $this->actingAs($this->user)->get(route('logout', ['lang' => app()->getLocale()]));
