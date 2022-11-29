@@ -175,3 +175,11 @@ For more information about project standards, take a look at these docs:
 [Drawsql link](https://drawsql.app/teams/giorgis-team/diagrams/coronatime) - DrawSQL software to create, visualize and collaborate on database entity relationship diagrams.
 
 #
+
+### Resources from the assignment
+
+[Figma design link](https://www.figma.com/file/O9A950iYrHgZHtBuCtNSY8/Coronatime?node-id=31%3A47&t=91Rdv9EfpdHTlQKx-0) - Figma is a collaborative web application for interface design, with additional offline features enabled by desktop applications for macOS and Windows.
+
+[Article regarding git commits](https://redberry.gitbook.io/resources/other/git-is-semantikuri-komitebi) - Git commits were done following information provided in this article, where it is described what should be specific commit be named.
+
+[Assignment gitbook](https://redberry.gitbook.io/coronatime/) - This assignment was done following requirements of provided in the assignment description, where it is clearly show what each section must do and what characteristics they must have.
