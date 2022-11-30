@@ -9,6 +9,7 @@
     <title>Coronatime</title>
 
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('imgs/corona-favicon.png') }}">
 
     @vite('resources/css/app.css')
 
