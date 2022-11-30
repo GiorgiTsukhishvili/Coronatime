@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CountriesData;
+use App\Models\CountryData;
 use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
@@ -15,9 +15,9 @@ class UsersController extends Controller
 		}
 
 		return view('users.worldwide', [
-			'deaths'   => CountriesData::sum('deaths'),
-			'recovers' => CountriesData::sum('recovered'),
-			'confirms' => CountriesData::sum('confirmed'),
+			'deaths'   => CountryData::sum('deaths'),
+			'recovers' => CountryData::sum('recovered'),
+			'confirms' => CountryData::sum('confirmed'),
 		]);
 	}
 
@@ -29,10 +29,10 @@ class UsersController extends Controller
 		}
 
 		return view('users.country', [
-			'deaths'    => CountriesData::sum('deaths'),
-			'recovers'  => CountriesData::sum('recovered'),
-			'confirms'  => CountriesData::sum('confirmed'),
-			'countries' => CountriesData::latest()->filter(request(['search']))->get(),
+			'deaths'    => CountryData::sum('deaths'),
+			'recovers'  => CountryData::sum('recovered'),
+			'confirms'  => CountryData::sum('confirmed'),
+			'countries' => CountryData::latest()->filter(request(['search']))->get(),
 		]);
 	}
 
@@ -44,10 +44,10 @@ class UsersController extends Controller
 		}
 
 		return view('users.country', [
-			'deaths'    => CountriesData::sum('deaths'),
-			'recovers'  => CountriesData::sum('recovered'),
-			'confirms'  => CountriesData::sum('confirmed'),
-			'countries' => CountriesData::orderBy(request('sort'), request('order'))->get(),
+			'deaths'    => CountryData::sum('deaths'),
+			'recovers'  => CountryData::sum('recovered'),
+			'confirms'  => CountryData::sum('confirmed'),
+			'countries' => CountryData::orderBy(request('sort'), request('order'))->get(),
 		]);
 	}
 
