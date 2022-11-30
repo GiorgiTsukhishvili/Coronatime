@@ -19,6 +19,10 @@ class RequestDataTest extends TestCase
 			], 200, ['Headers']),
 		]);
 
-		$this->artisan('command:request_data')->assertSuccessful();
+		Http::fake([
+			'https://devtest.ge/get-country-statistics',
+		]);
+
+		$this->artisan('command:coronatime-request-data')->assertSuccessful();
 	}
 }
