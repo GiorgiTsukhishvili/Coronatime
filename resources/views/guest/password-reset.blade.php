@@ -17,7 +17,7 @@
             </h1>
 
 
-            <form method="POST" action="{{ route('post-password-reset', ['lang' => app()->getLocale()]) }}"
+            <form method="POST" action="{{ route('password-reset.post', ['lang' => app()->getLocale()]) }}"
                 class="xs:flex xs:flex-col ">
                 @csrf
                 <div class="pt-6 relative ">

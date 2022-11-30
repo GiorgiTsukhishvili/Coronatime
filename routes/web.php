@@ -21,11 +21,11 @@ Route::middleware('guest')->group(function () {
 	Route::post('/', [GuestController::class, 'login'])->name('login');
 	Route::get('/password-reset', [GuestController::class, 'reset'])->name('reset');
 	Route::get('/register', [GuestController::class, 'register'])->name('register');
-	Route::post('/register', [EmailController::class, 'postRegister'])->name('post-register');
+	Route::post('/register', [EmailController::class, 'postRegister'])->name('register.post');
 	Route::get('/verify-account', [EmailController::class, 'verifyAccount'])->name('verify-account');
-	Route::post('/password-reset', [EmailController::class, 'postPasswordChange'])->name('post-password-reset');
+	Route::post('/password-reset', [EmailController::class, 'postPasswordChange'])->name('password-reset.post');
 	Route::get('/new-password', [EmailController::class, 'newPassword'])->name('new-password');
-	Route::post('/new-password', [EmailController::class, 'postNewPassword'])->name('new-password-post');
+	Route::post('/new-password', [EmailController::class, 'postNewPassword'])->name('new-password.post');
 });
 
 Route::middleware('auth')->group(function () {

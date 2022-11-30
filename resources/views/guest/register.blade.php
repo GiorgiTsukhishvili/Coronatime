@@ -21,7 +21,7 @@
                     {{ __('register.welcome-two') }}</h1>
 
 
-                <form method="POST" action="{{ route('post-register') }}?lang={{ app()->getlocale() }}"
+                <form method="POST" action="{{ route('register.post') }}?lang={{ app()->getlocale() }}"
                     class="flex flex-col xs:max-w-[392px] max-w-[343px]">
                     @csrf
 

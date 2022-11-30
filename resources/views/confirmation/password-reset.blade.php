@@ -14,7 +14,7 @@
 
 
             <form method="POST"
-                action="{{ route('new-password-post', ['lang' => app()->getLocale(), 'token' => $token]) }}"
+                action="{{ route('new-password.post', ['lang' => app()->getLocale(), 'token' => $token]) }}"
                 class="xs:flex xs:flex-col ">
                 @csrf
                 <div class="pt-6 relative xs:flex xs:flex-col">
