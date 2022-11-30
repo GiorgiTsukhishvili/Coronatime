@@ -32,7 +32,7 @@ class EmailController extends Controller
 			'token'   => $token,
 		]);
 
-		Mail::send('confirmation.email', ['token' => $token], function ($message) use ($request) {
+		Mail::send('email.email', ['token' => $token], function ($message) use ($request) {
 			$message->to($request->email);
 			$message->subject('Email Verification Mail');
 		});
@@ -88,7 +88,7 @@ class EmailController extends Controller
 			'token'   => $token,
 		]);
 
-		Mail::send('confirmation.reset-email', ['token' => $token], function ($message) use ($request) {
+		Mail::send('email.reset-email', ['token' => $token], function ($message) use ($request) {
 			$message->to($request->email);
 			$message->subject('Password Reset Mail');
 		});
