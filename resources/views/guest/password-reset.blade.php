@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot name='content'>
 
-        <div class="absolute top-6 left-60 xs:left-[900px] xs:top-10">
+        <div class="absolute top-6 left-60 xs:left-[900px] 2xl:left-[1200px] xs:top-10">
             <x-language :route="route('reset')" />
 
         </div>
