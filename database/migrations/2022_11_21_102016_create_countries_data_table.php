@@ -12,7 +12,7 @@ return new class extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('countries_data', function (Blueprint $table) {
+		Schema::create('country_data', function (Blueprint $table) {
 			$table->id();
 			$table->text('name');
 			$table->integer('confirmed');
