@@ -82,7 +82,7 @@
 
 <body id="body">
 
-    <img src="{{ asset('imgs/email-photo.png') }}" alt="email" class="email-photo">
+    <img src="{{ $message->embed('imgs/email-photo.png') }}" alt="email" class="email-photo">
 
     <h1 class="confirmation">{{ __('email.confirmation') }}</h1>
 
