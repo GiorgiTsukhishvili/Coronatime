@@ -20,21 +20,21 @@ class PasswordResetTest extends TestCase
 
 	public function test_application_returns_error_if_email_is_not_provided_for_password_reset()
 	{
-		$response = $this->post(route('post-password-reset', ['lang' => app()->getLocale()]));
+		$response = $this->post(route('password-reset.post', ['lang' => app()->getLocale()]));
 
 		$response->assertSessionHasErrors(['email']);
 	}
 
 	public function test_application_returns_error_if_email_wrong_for_password_reset()
 	{
-		$response = $this->post(route('post-password-reset', ['lang' => app()->getLocale()]), ['email' => 'sda']);
+		$response = $this->post(route('password-reset.post', ['lang' => app()->getLocale()]), ['email' => 'sda']);
 
 		$response->assertSessionHasErrors(['email']);
 	}
 
 	public function test_application_returns_error_if_email_does_not_exists_for_password_reset()
 	{
-		$response = $this->post(route('post-password-reset', ['lang' => app()->getLocale()]), ['email' => 'giorgi@gmail.com']);
+		$response = $this->post(route('password-reset.post', ['lang' => app()->getLocale()]), ['email' => 'giorgi@gmail.com']);
 
 		$response->assertSessionHasErrors(['email']);
 	}
@@ -43,7 +43,7 @@ class PasswordResetTest extends TestCase
 	{
 		User::factory()->create(['email' => 'sacdeli@gmail.com']);
 
-		$response = $this->post(route('post-password-reset', ['lang' => app()->getLocale()]), ['email' => 'sacdeli@gmail.com']);
+		$response = $this->post(route('password-reset.post', ['lang' => app()->getLocale()]), ['email' => 'sacdeli@gmail.com']);
 
 		$response->assertViewIs('confirmation.email-sent');
 	}
@@ -59,28 +59,28 @@ class PasswordResetTest extends TestCase
 
 	public function test_application_returns_error_if_password_are_not_provided()
 	{
-		$response = $this->post(route('new-password-post', ['lang' => app()->getLocale()]));
+		$response = $this->post(route('new-password.post', ['lang' => app()->getLocale()]));
 
 		$response->assertSessionHasErrors(['password', 'password_confirmation']);
 	}
 
 	public function test_application_returns_error_if_passwords_do_not_match()
 	{
-		$response = $this->post(route('new-password-post', ['lang' => app()->getLocale()]), ['password' => 'asdsad', 'password_confirmation' =>'sadsasdsd']);
+		$response = $this->post(route('new-password.post', ['lang' => app()->getLocale()]), ['password' => 'asdsad', 'password_confirmation' =>'sadsasdsd']);
 
 		$response->assertSessionHasErrors(['password']);
 	}
 
 	public function test_application_returns_error_if_password_is_less_then_three_symbols()
 	{
-		$response = $this->post(route('new-password-post', ['lang' => app()->getLocale()]), ['password' => 'ww', 'password_confirmation' =>'ww']);
+		$response = $this->post(route('new-password.post', ['lang' => app()->getLocale()]), ['password' => 'ww', 'password_confirmation' =>'ww']);
 
 		$response->assertSessionHasErrors(['password']);
 	}
 
 	public function test_application_returns_abort_if_token_is_not_provided()
 	{
-		$response = $this->post(route('new-password-post', ['lang' => app()->getLocale()]), ['password' => '12345', 'password_confirmation' =>'12345']);
+		$response = $this->post(route('new-password.post', ['lang' => app()->getLocale()]), ['password' => '12345', 'password_confirmation' =>'12345']);
 
 		$response->assertStatus(403);
 	}
@@ -96,7 +96,7 @@ class PasswordResetTest extends TestCase
 			'token'   => $token,
 		]);
 
-		$response = $this->post(route('new-password-post', ['lang' => app()->getLocale()]), ['password' => '12345', 'password_confirmation' =>'12345', 'token' => $token]);
+		$response = $this->post(route('new-password.post', ['lang' => app()->getLocale()]), ['password' => '12345', 'password_confirmation' =>'12345', 'token' => $token]);
 
 		$response->assertViewIs('confirmation.password-changed');
 	}

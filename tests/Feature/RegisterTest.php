@@ -21,7 +21,7 @@ class RegisterTest extends TestCase
 	public function test_application_returns_confirmation_page_after_registration()
 	{
 		$response = $this->post(
-			route('post-register', ['lang' => app()->getLocale()]),
+			route('register.post', ['lang' => app()->getLocale()]),
 			[
 				'username'              => 'giorgi',
 				'email'                 => 'giorgi@redberry.ge',
@@ -36,7 +36,7 @@ class RegisterTest extends TestCase
 	public function test_application_returns_error_on_registration_if_data_is_not_provided()
 	{
 		$response = $this->post(
-			route('post-register', ['lang' => app()->getLocale()]),
+			route('register.post', ['lang' => app()->getLocale()]),
 		);
 
 		$response->assertSessionHasErrors(['username', 'email', 'password', 'password_confirmation']);
@@ -45,7 +45,7 @@ class RegisterTest extends TestCase
 	public function test_application_returns_error_after_invalid_data_on_registration()
 	{
 		$response = $this->post(
-			route('post-register', ['lang' => app()->getLocale()]),
+			route('register.post', ['lang' => app()->getLocale()]),
 			[
 				'username'              => 'gi',
 				'email'                 => 'gi',
