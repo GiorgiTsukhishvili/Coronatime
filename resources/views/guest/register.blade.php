@@ -103,7 +103,8 @@
 
 
             </div>
-            <img src="{{ asset('imgs/covid-photo.png') }}" alt="Covid" class="xs:inline hidden">
+            <img src="{{ asset('imgs/covid-photo.png') }}" alt="Covid"
+                class="xs:inline hidden h-screen w-[600px] object-cover">
         </div>
 
     </x-slot>
