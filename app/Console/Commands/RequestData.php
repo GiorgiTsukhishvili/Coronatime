@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 
 class RequestData extends Command
 {
-	protected $signature = 'command:request_data';
+	protected $signature = 'command:request-data';
 
 	protected $description = 'Request data from foreign api';
 
