@@ -47,9 +47,13 @@
             box-sizing: border-box
         }
 
+        .email-photo-div {
+            margin: 188px 25% 56px 25%;
+
+        }
+
         .email-photo {
-            margin: 188px 5% 56px 5%;
-            width: 90%;
+            max-width: 600px;
         }
 
         @media (max-width: 380px) {
@@ -72,8 +76,13 @@
                 line-height: 17px;
             }
 
-            .email-photo {
+            .email-photo-div {
                 margin: 16px 5% 40px 5%;
+
+            }
+
+            .email-photo {
+                max-width: 343px;
             }
         }
     </style>
@@ -82,8 +91,10 @@
 
 <body id="body">
 
-    <img src="{{ $message->embed('imgs/email-photo.png') }}" alt="email" class="email-photo">
+    <div class="email-photo-div">
+        <img src="{{ $message->embed('imgs/email-photo.png') }}" alt="email" class="email-photo">
 
+    </div>
     <h1 class="recover">{{ __('reset.recover-password') }}</h1>
 
     <h1 class="button-click">{{ __('reset.click-button') }}</h1>
