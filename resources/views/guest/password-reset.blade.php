@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="mt-[337px] xs:mt-14">
-                    <x-form.button :text="__('reset.sign-up')" />
+                    <x-form.button :text="__('reset.reset')" />
                 </div>
             </form>
         </div>
