@@ -16,6 +16,8 @@ module.exports = {
                 "green-550": "#0FBA68",
                 "green-650": "#249E2C",
                 "yellow-450": "#EAD621",
+                "gray-arrow": "#BFC0C4",
+                "dark-arrow": "#010414",
                 error: "#CC1E1E",
             },
             screens: {
