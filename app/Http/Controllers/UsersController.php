@@ -47,7 +47,7 @@ class UsersController extends Controller
 			'deaths'    => CountryData::sum('deaths'),
 			'recovers'  => CountryData::sum('recovered'),
 			'confirms'  => CountryData::sum('confirmed'),
-			'countries' => CountryData::orderBy(request('sort'), request('order'))->get(),
+			'countries' => CountryData::filter(request(['search']))->orderBy(request('sort'), request('order'))->get(),
 		]);
 	}
 
