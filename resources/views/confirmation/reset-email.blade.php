@@ -7,6 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Email</title>
     <style>
+        u+#body a {
+            color: white;
+            text-decoration: none;
+        }
+
         .recover {
             margin: 0 auto;
             font-weight: 900;
@@ -75,7 +80,7 @@
 
 </head>
 
-<body>
+<body id="body">
 
     <img src="{{ asset('imgs/email-photo.png') }}" alt="email" class="email-photo">
 
