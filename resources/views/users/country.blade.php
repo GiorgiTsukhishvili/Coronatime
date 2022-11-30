@@ -34,7 +34,7 @@
                 <input type="text" name="lang" value="{{ app()->getLocale() }}" class="hidden">
             </form>
         </div>
-        <div class="mt-6 xs:mt-10 bg-neutral-150 py-5 pl-4 xs:mx-[108px] xs:rounded-t-lg">
+        <div class="mt-6 xs:mt-10 bg-neutral-150 py-5 pl-4 md:mx-[108px]  xs:rounded-t-lg">
             <div class="xs:pl-6 grid grid-cols-4 xs:grid-cols-6">
                 <a href="{{ route('sort') }}?sort=name&order={{ (request('sort') === 'name') & (request('order') === 'asc') ? 'desc' : 'asc' }}&lang={{ app()->getLocale() }}"
                     class="flex items-center gap-2 text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
@@ -80,7 +80,7 @@
         </div>
         @if (count($countries) > 0)
             <div
-                class="ml-4 xs:h-[547px] xs:overflow-auto xs:mx-[108px] xs:border xs:border-neutral-150 xs:rounded-b-lg shadow-box">
+                class="ml-4 xs:h-[547px] xs:overflow-auto md:mx-[108px] xs:border xs:border-neutral-150 xs:rounded-b-lg shadow-box">
                 @if (count($countries) > 1)
                     <div class="xs:pl-10 grid grid-cols-4 xs:grid-cols-6 py-4 border-b border-neutral-150">
                         <h1 class=" text-black-150 font-normal text-sm leading-[17px] pr-4 break-words">
