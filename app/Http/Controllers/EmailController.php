@@ -67,7 +67,7 @@ class EmailController extends Controller
 
 		DB::table('users_verify')->where(['token' => request('token')])->delete();
 
-		return view('confirmation.email-verified');
+		return view('email.email-verified');
 	}
 
 	public function postPasswordChange(PasswordResetRequest $request)
@@ -88,7 +88,7 @@ class EmailController extends Controller
 			'token'   => $token,
 		]);
 
-		Mail::send('confirmation.reset-email', ['token' => $token], function ($message) use ($request) {
+		Mail::send('email.reset-email', ['token' => $token], function ($message) use ($request) {
 			$message->to($request->email);
 			$message->subject('Password Reset Mail');
 		});
