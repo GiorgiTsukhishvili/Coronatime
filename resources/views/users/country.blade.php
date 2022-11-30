@@ -20,17 +20,17 @@
             </div>
 
             <form action="{{ route('by-country') }}" method="GET"
-                class="flex items-center mt-6 xs:my-10 xs:border xs:border-neutral-250 xs:rounded-lg xs:w-72 xs:py-[14px] xs:pl-6">
+                class="flex items-center mb-10 mt-6 xs:mt-10 xs:mb-16  xs:w-72 xs:py-[14px] xs:pl-6 relative">
                 @csrf
 
-                <button type="submit" class="mr-2 xs:mr-4">
-                    <x-svgs.search-button />
-                </button>
 
+                {{-- outline-none focus:border-none focus:outline-none border-none focus:ring-0 --}}
                 <input type="text" value="{{ request('search') }}" name="search"
                     placeholder="{{ __('landing.country-search') }}"
-                    class="outline-none border-none focus:outline-none text-zinc-550 text-sm leading-[17px] placeholder:text-sm placeholder:leading-[17px] xs:w-52">
-
+                    class="absolute top-0 left-0 border-none outline-none pl-8 xs:border-neutral-250  xs:border focus:ring-0 focus:outline-none focus:border-neutral-250  xs:rounded-lg xs:w-72 xs:py-[16px] xs:pl-16  text-zinc-550 text-sm leading-[17px] placeholder:text-sm placeholder:leading-[17px]">
+                <button type="submit" class="mr-2 xs:mr-4 top-1 xs:top-4 absolute z-5">
+                    <x-svgs.search-button />
+                </button>
                 <input type="text" name="lang" value="{{ app()->getLocale() }}" class="hidden">
             </form>
         </div>
