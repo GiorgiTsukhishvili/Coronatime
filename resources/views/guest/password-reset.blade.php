@@ -42,7 +42,7 @@
 
                 </div>
 
-                <div class="mt-[337px] xs:mt-14">
+                <div class="mt-[337px] xs:mt-14 xs:w-[392px]">
                     <x-form.button :text="__('reset.reset')" />
                 </div>
             </form>
