@@ -36,7 +36,7 @@
         </div>
         <div class="mt-6 xs:mt-10 bg-neutral-150 py-5 pl-4 xs:mx-[108px] xs:rounded-t-lg">
             <div class="xs:pl-6 grid grid-cols-4 xs:grid-cols-6">
-                <a href="{{ route('sort') }}?sort=name&order={{ (request('sort') === 'name') & (request('order') === 'asc') ? 'desc' : 'asc' }}&lang={{ app()->getLocale() }}&search={{ request('search') }}""
+                <a href="{{ route('sort', ['sort' => 'name', 'order' => (request('sort') === 'name') & (request('order') === 'asc') ? 'desc' : 'asc', 'lang' => app()->getLocale(), 'search' => request('search')]) }}""
                     class="flex items-center gap-2 text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
                     <span class="w-[74px] break-words xs:w-fit">{{ __('landing.location') }}</span>
 
@@ -46,7 +46,7 @@
 
                     </div>
                 </a>
-                <a href="{{ route('sort') }}?sort=confirmed&order={{ (request('sort') === 'confirmed') & (request('order') === 'asc') ? 'desc' : 'asc' }}&lang={{ app()->getLocale() }}&search={{ request('search') }}""
+                <a href="{{ route('sort', ['sort' => 'confirmed', 'order' => (request('sort') === 'confirmed') & (request('order') === 'asc') ? 'desc' : 'asc', 'lang' => app()->getLocale(), 'search' => request('search')]) }}""
                     class="flex items-center gap-2 text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
                     <span class="w-[74px] break-words xs:w-fit"> {{ __('landing.new-cases') }}
                     </span>
@@ -56,7 +56,7 @@
 
                     </div>
                 </a>
-                <a href="{{ route('sort') }}?sort=deaths&order={{ (request('sort') === 'deaths') & (request('order') === 'asc') ? 'desc' : 'asc' }}&lang={{ app()->getLocale() }}&search={{ request('search') }}""
+                <a href="{{ route('sort', ['sort' => 'deaths', 'order' => (request('sort') === 'deaths') & (request('order') === 'asc') ? 'desc' : 'asc', 'lang' => app()->getLocale(), 'search' => request('search')]) }}""
                     class="flex items-center gap-2 text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
                     <span class="w-[74px] break-words xs:w-fit"> {{ __('landing.death') }}
                     </span>
@@ -66,7 +66,7 @@
 
                     </div>
                 </a>
-                <a href="{{ route('sort') }}?sort=recovered&order={{ (request('sort') === 'recovered') & (request('order') === 'asc') ? 'desc' : 'asc' }}&lang={{ app()->getLocale() }}&search={{ request('search') }}""
+                <a href="{{ route('sort', ['sort' => 'recovered', 'order' => (request('sort') === 'recovered') & (request('order') === 'asc') ? 'desc' : 'asc', 'lang' => app()->getLocale(), 'search' => request('search')]) }}""
                     class="flex items-center gap-2 text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
                     <span class="w-[74px] break-words xs:w-fit"> {{ __('landing.recovered') }}
                     </span>
