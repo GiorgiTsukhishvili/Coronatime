@@ -25,8 +25,14 @@ class CountryData extends Model
 	{
 		if ($filters['search'] ?? false)
 		{
-			$query->where('name->en', 'like', '%' . ucfirst($filters['search']) . '%')
-			->orWhere('name->ka', 'like', '%' . ucfirst($filters['search']) . '%');
+			if (app()->getLocale() === 'en')
+			{
+				$query->where('name->en', 'like', '%' . ucfirst($filters['search']) . '%');
+			}
+			if (app()->getLocale() === 'ka')
+			{
+				$query->where('name->ka', 'like', '%' . ucfirst($filters['search']) . '%');
+			}
 		}
 	}
 }
