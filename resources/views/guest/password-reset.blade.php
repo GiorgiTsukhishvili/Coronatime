@@ -1,14 +1,17 @@
 <x-layout>
     <x-slot name='content'>
 
-        <div class="absolute top-6 left-60 xs:left-[900px] 2xl:left-[1200px] xs:top-10">
-            <x-language :route="route('reset')" />
 
-        </div>
 
         <div class="w-full pt-6 pl-4 xs:flex xs:flex-col xs:justify-center xs:items-center">
 
-            <x-svgs.logo />
+            <div class="flex">
+
+
+                <x-svgs.logo />
+                <x-language :route="route('reset')" />
+
+            </div>
 
 
             <h1
@@ -18,7 +21,7 @@
 
 
             <form method="POST" action="{{ route('password-reset.post', ['lang' => app()->getLocale()]) }}"
-                class="xs:flex xs:flex-col ">
+                class="xs:flex xs:flex-col max-w-[343px]">
                 @csrf
                 <div class="pt-6 relative ">
 
@@ -26,7 +29,7 @@
                         class=" pt-6 block font-bold text-sm leading-4 xs:leading-8.5 xs:text-base text-black-150">{{ __('reset.email') }}</label>
                     <input required type="email" name="email" id="email"
                         placeholder="{{ __('reset.email-input') }}"
-                        class="focus:shadow-focus-box {{ $errors->has('email') ? 'border-error' : 'border-neutral-250' }} focus:border focus:outline-none focus:border-blue-750   mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
+                        class="focus:shadow-focus-box {{ $errors->has('email') ? 'border-error' : 'border-neutral-250' }} focus:border focus:outline-none focus:border-blue-750   mt-2 border border-neutral-250 rounded-lg py-[18px] px-6 xs:w-[392px] w-full placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
                     <div class="absolute right-8 xs:right-4 top-[92px] hidden">
                         <x-svgs.green-circle />
                     </div>

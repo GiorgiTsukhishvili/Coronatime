@@ -31,7 +31,7 @@
                             class=" font-bold text-sm leading-4 md:leading-8.5 md:text-base text-black-150">{{ __('login.username') }}</label>
                         <input required type="text" name="login" id="login" minlength="3"
                             placeholder="{{ __('login.username-input') }}" value="{{ old('login') }}"
-                            class="focus:shadow-focus-box focus:border focus:outline-none focus:border-blue-750       mt-2 border {{ $errors->any() ? 'border-error' : 'border-neutral-250' }} rounded-lg py-[18px] px-6 md:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
+                            class="focus:shadow-focus-box focus:border focus:outline-none focus:border-blue-750       mt-2 border {{ $errors->any() ? 'border-error' : 'border-neutral-250' }} rounded-lg py-[18px] px-6 md:w-[392px] w-full placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
 
                         <div class="absolute right-4 bottom-5 hidden">
                             <x-svgs.green-circle />
@@ -51,7 +51,7 @@
                             class=" font-bold text-sm leading-4 md:leading-8.5 md:text-base text-black-150">{{ __('login.password') }}</label>
                         <input required type="password" name="password" id="password" minlength="3"
                             placeholder="{{ __('login.password-input') }}"
-                            class=" focus:shadow-focus-box focus:border focus:outline-none focus:border-blue-750 mt-2 border {{ $errors->any() ? 'border-error' : 'border-neutral-250' }} rounded-lg py-[18px] px-6 md:w-[392px] w-[343px] placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
+                            class=" focus:shadow-focus-box focus:border focus:outline-none focus:border-blue-750 mt-2 border {{ $errors->any() ? 'border-error' : 'border-neutral-250' }} rounded-lg py-[18px] px-6 md:w-[392px] w-full placeholder-zinc-550 placeholder:leading-8.5 placeholder:font-normal">
                         <div class="absolute right-4 bottom-5 hidden">
                             <x-svgs.green-circle />
                         </div>
