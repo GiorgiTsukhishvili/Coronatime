@@ -13,7 +13,7 @@
         <x-language :route="$route" />
 
 
-        <div class="xs:hidden  flex justify-center">
+        <div class="sm:hidden  flex justify-center">
             <div x-data="{
                 open: false,
                 toggle() {
@@ -60,7 +60,7 @@
             </div>
         </div>
 
-        <div class="hidden xs:flex xs:items-center">
+        <div class="hidden sm:flex sm:items-center">
 
             <h1 class="text-black-150 pr-4 font-bold leading-8.5 text-base">{{ auth()->user()->username }}</h1>
 
