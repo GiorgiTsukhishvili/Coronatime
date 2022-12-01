@@ -7,7 +7,7 @@
             (!is_null(request('sort')) ? '?sort=' . request('sort') . '&order=' . request('order') : '')" />
 
 
-        <div class="pl-4 pt-6 xs:px-[108px] xs:pt-10 ">
+        <div class="pl-4 pt-6 md:px-[108px] xs:pt-10 ">
             <h1 class="font-black text-xl xs:text-2xl xs:leading-[30px] leading-6 text-black-150 mb-6 xs:mb-10">
                 {{ __('landing.country-stats') }}
             </h1>
@@ -33,7 +33,7 @@
             </form>
         </div>
         <div class="mt-6 xs:mt-10 bg-neutral-150 py-5 pl-4 md:mx-[108px]  xs:rounded-t-lg">
-            <div class="xs:pl-6 grid grid-cols-4 xs:grid-cols-6">
+            <div class="md:pl-6 grid grid-cols-4 md:grid-cols-6">
                 <a href="{{ route('sort', ['sort' => 'name', 'order' => (request('sort') === 'name') & (request('order') === 'asc') ? 'desc' : 'asc', 'lang' => app()->getLocale(), 'search' => request('search')]) }}""
                     class="flex items-center gap-2 text-black-150 font-semibold text-sm leading-[17px] pr-4 break-words">
                     <span class="w-[74px] break-words xs:w-fit">{{ __('landing.location') }}</span>
@@ -80,7 +80,7 @@
             <div
                 class="ml-4 xs:h-[547px] xs:overflow-auto md:mx-[108px] xs:border xs:border-neutral-150 xs:rounded-b-lg shadow-box">
                 @if (count($countries) > 1)
-                    <div class="xs:pl-10 grid grid-cols-4 xs:grid-cols-6 py-4 border-b border-neutral-150">
+                    <div class="md:pl-10 grid grid-cols-4 ms:grid-cols-6 py-4 border-b border-neutral-150">
                         <h1 class=" text-black-150 font-normal text-sm leading-[17px] pr-4 break-words">
                             {{ __('landing.worldwide') }}
                         </h1>

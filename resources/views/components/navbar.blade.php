@@ -1,7 +1,7 @@
 @props(['route'])
 
 
-<div class="pl-4 pr-[29px] xs:px-[108px] flex justify-between items-center border-b border-neutral-250 h-20 w-full">
+<div class="pl-4 pr-[29px] md:px-[108px] flex justify-between items-center border-b border-neutral-250 h-20 w-full">
     <x-svgs.logo />
 
 
