@@ -48,10 +48,11 @@
         }
 
         .email-photo-div {
-            display: block;
 
-            margin: 188px 25% 56px 25%;
-
+            margin-top: 188px;
+            margin-bottom: 56px;
+            width: 100%;
+            text-align: center
         }
 
         .email-photo {
@@ -79,9 +80,10 @@
             }
 
             .email-photo-div {
-                margin: 16px 5% 40px 5%;
-
-
+                margin-top: 16px;
+                margin-bottom: 40px;
+                width: 100%;
+                text-align: center
             }
 
             .email-photo {
