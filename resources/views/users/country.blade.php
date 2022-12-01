@@ -3,7 +3,7 @@
 
 
         <x-navbar :route="(is_null(request('sort')) ? route('by-country') : route('sort')) .
-            (!is_null(request('search')) ? '?search=' . request('search') : '') .
+            ('?search=' . request('search')) .
             (!is_null(request('sort')) ? '?sort=' . request('sort') . '&order=' . request('order') : '')" />
 
 
