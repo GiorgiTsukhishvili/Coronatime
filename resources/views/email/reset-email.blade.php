@@ -12,13 +12,17 @@
             text-decoration: none;
         }
 
+        #body {
+            background-color: white !important
+        }
+
         .recover {
             margin: 0 auto;
             font-weight: 900;
             font-size: 25px;
             line-height: 30px;
             text-align: center;
-            color: #010414
+            color: #010414 !important
         }
 
         .button-click {
@@ -27,7 +31,7 @@
             font-size: 18px;
             line-height: 22px;
             text-align: center;
-            color: #010414;
+            color: #010414 !important;
         }
 
 

@@ -12,6 +12,10 @@
             text-decoration: none;
         }
 
+        #body {
+            background-color: white !important
+        }
+
         .confirmation {
             margin: 0 auto;
             font-weight: 900;
