@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 
 class RequestData extends Command
 {
-	protected $signature = 'command:coronatime-request-data';
+	protected $signature = 'coronatime:request-data';
 
 	protected $description = 'Request data from foreign api';
 
