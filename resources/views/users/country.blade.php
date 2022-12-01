@@ -78,7 +78,7 @@
         </div>
         @if (count($countries) > 0)
             <div
-                class="ml-4 xs:h-[547px] xs:overflow-auto md:mx-[108px] xs:border xs:border-neutral-150 xs:rounded-b-lg shadow-box">
+                class="ml-4 xs:h-[547px] xs:overflow-auto md:mx-[108px] xs:border xs:border-neutral-150 xs:rounded-b-lg shadow-box scroll">
                 @if (count($countries) > 1)
                     <div class="md:pl-10 grid grid-cols-4 md:grid-cols-6 py-4 border-b border-neutral-150">
                         <h1 class=" text-black-150 font-normal text-sm leading-[17px] pr-4 break-words">
