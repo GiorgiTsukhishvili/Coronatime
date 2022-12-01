@@ -25,7 +25,7 @@
 
                 <input type="text" value="{{ request('search') }}" name="search"
                     placeholder="{{ __('landing.country-search') }}"
-                    class="absolute top-0 left-0 border-none outline-none pl-8 xs:border-neutral-250  xs:border focus:ring-0 focus:outline-none focus:border-neutral-250  xs:rounded-lg xs:w-72 xs:py-[16px] xs:pl-16  text-zinc-550 text-sm leading-[17px] placeholder:text-sm placeholder:leading-[17px]">
+                    class="absolute top-0 left-0 border-white outline-none pl-8 xs:border-neutral-250  xs:border focus:ring-0 focus:outline-none focus:border-neutral-250  xs:rounded-lg xs:w-72 xs:py-[16px] xs:pl-16  text-zinc-550 text-sm leading-[17px] placeholder:text-sm placeholder:leading-[17px]">
                 <button type="submit" class="mr-2 xs:mr-4 top-1 xs:top-4 absolute z-5">
                     <x-svgs.search-button />
                 </button>
