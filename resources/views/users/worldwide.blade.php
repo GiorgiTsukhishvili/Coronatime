@@ -4,7 +4,7 @@
         <x-navbar :route="route('worldwide')" />
 
 
-        <div class="pl-4 pt-6 xs:px-[108px] xs:pt-10">
+        <div class="pl-4 pt-6 md:px-[108px] xs:pt-10">
             <h1 class="font-black text-xl xs:text-2xl xs:leading-[30px] leading-6 text-black-150 mb-6 xs:mb-10">
                 {{ __('landing.worldwide-stats') }}
             </h1>
@@ -17,9 +17,9 @@
             </div>
 
 
-            <div class="flex justify-center items-center flex-wrap xs:flex-auto gap-4 xs:gap-6 pt-10">
+            <div class="grid grid-cols-6 gap-4 xs:gap-6 pt-10">
                 <div
-                    class="w-[343px] flex flex-col justify-center items-center  shadow-box h-[193px] xs:w-[392px] xs:h-[255px] bg-blue-750 bg-opacity-[0.08] rounded-2xl">
+                    class="col-span-6 lg:col-span-2 flex flex-col justify-center items-center  shadow-box h-[193px]  xs:h-[255px] bg-blue-750 bg-opacity-[0.08] rounded-2xl">
 
 
 
@@ -31,7 +31,7 @@
                         {{ $confirms }}</h1>
                 </div>
                 <div
-                    class="w-[163px] flex flex-col justify-center items-center shadow-box h-[193px] xs:w-[392px] xs:h-[255px] bg-green-550 bg-opacity-[0.08] rounded-2xl">
+                    class="col-span-3 lg:col-span-2 flex flex-col justify-center items-center shadow-box h-[193px]  xs:h-[255px] bg-green-550 bg-opacity-[0.08] rounded-2xl">
                     <x-svgs.diagram-green />
 
                     <h1 class="text-black-150 py-4 xs:pt-6 xs:text-xl xs:leading-6 font-base leading-8.5 font-medium">
@@ -42,7 +42,7 @@
                     </h1>
                 </div>
                 <div
-                    class="w-[163px] flex flex-col justify-center items-center shadow-box h-[193px] xs:w-[392px] xs:h-[255px] bg-yellow-450 bg-opacity-[0.08] rounded-2xl">
+                    class="col-span-3 lg:col-span-2 flex flex-col justify-center items-center shadow-box h-[193px]  xs:h-[255px] bg-yellow-450 bg-opacity-[0.08] rounded-2xl">
                     <x-svgs.diagram-yellow />
 
                     <h1 class="text-black-150 py-4 xs:pt-6 xs:text-xl xs:leading-6 font-base leading-8.5 font-medium">
